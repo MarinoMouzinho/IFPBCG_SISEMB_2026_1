@@ -1,2 +1,2 @@
-# IFPBCG_SISEMB_2026_1
-Repositório de resoluções das atividades da disciplina de Sistemas Embarcados 2026.1
+# IFPBCG_SISEMB_2026_2
+Repositório de resoluções das atividades da disciplina de Sistemas Embarcados 2026.2
