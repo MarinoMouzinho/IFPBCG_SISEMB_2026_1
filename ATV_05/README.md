@@ -7,11 +7,12 @@ Atividade prática com o objetivo de desenvolver um sistema embarcado utilizando
 Como pré-requisito foram elaborados:
 
 * **Diagrama em Blocos**, representando:
-  * ESP32S3;
+  * ESP32-S3: gerador de PWM.
+  * LEDs: Contador de 4 bits.
   * LED: intensidade controlada por PWM (duty cycle).
-  * Buzzer: frequência sonora controlada por PWM.
-  * Botão A: aumenta duty cycle do LED (+10%).
-  * Botão B: aumenta frequência do buzzer (+100 Hz).
+  * Buzzer: frequência sonora controlada por PWM (a mesma utilizada no LED)
+  * Botão A: Incrementar contador +1 (aumenta duty cycle do LED 0,00%; 6.25%; 12,50%, … , 93.75% e 100.00%).
+  * Botão B: Decrementar contador -1 (sequência inversa do botão A).
 
   ![Diagrama em Blocos](./Diagrama%20de%20Blocos.png)
   
