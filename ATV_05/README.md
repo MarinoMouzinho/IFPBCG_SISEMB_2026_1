@@ -29,4 +29,4 @@ _Os diagramas foram desenvolvidos no __Draw.io__ e se encontram disponibilizados
 
 ## Projeto Implementado no Wokwi
 
-https://wokwi.com/projects/475419853124152321
+https://wokwi.com/projects/475732108172434433
