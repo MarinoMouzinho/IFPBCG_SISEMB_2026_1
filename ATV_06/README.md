@@ -10,7 +10,7 @@ tempo via software, garantindo que o sistema permaneça responsivo.
 Observações:
 * O sistema deve realizar a leitura do botão por polling em um laço não bloqueante.
 * Implementar rotina de tratamento debounce.
-* Fica **estritamente proibido** o uso de vTaskDelay(), rom_delay_us() ou qualquerfunção de atraso.
+* Fica **estritamente proibido** o uso de vTaskDelay(), rom_delay_us() ou qualquer função de atraso.
 
 ---
 
