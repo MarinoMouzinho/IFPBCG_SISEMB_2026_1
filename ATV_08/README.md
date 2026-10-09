@@ -27,4 +27,4 @@ Compreender o funcionamento básico do periférico UART (Universal Asynchronous 
 7. Ao identificar a string "DESLIGAR", o LED deve apagar.
 
 ## Resolução Desenvolvida
-Disponível em [`main.c`](/main.c) e apresentada ao monitor da disciplina.
+Disponível em [`main.c`](./main.c) e apresentada ao monitor da disciplina.
