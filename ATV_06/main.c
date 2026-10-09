@@ -47,7 +47,7 @@ int app_main(void){
     bool current_button_raw = gpio_get_level(BUTTON_PIN);
 
     if (current_button_raw != last_button_raw) {
-        last_debounce_time = now; // Reinicia o timer de debounce se o sinal oscilar
+        last_debounce_time = now; // Reinicia o timer
     }
 
     if ((now - last_debounce_time) > DEBOUNCE_TIME_US) {

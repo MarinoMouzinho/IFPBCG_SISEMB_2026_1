@@ -10,12 +10,11 @@
 #define BUTTON_PIN GPIO_NUM_4
 
 #define DEBOUNCE_TIME_US 50000 // 50 ms
-#define TIMER_LED_US (30 * 1000000LL) // 30 segundos
+#define TIMER_LED_US (10 * 1000000LL) // 10 segundos
 #define LONG_PRESS_TIME_US (2 * 1000000LL) // 2 segundos
 
 static const char *TAG = "ATV_07_ISR_TIMER";
 
-// Estrutura para os eventos de interrupção
 typedef struct {
     int level;
     int64_t timestamp;
@@ -70,7 +69,7 @@ static void button_task(void *arg)
                     ESP_LOGI(TAG, "[BOTÃO PRESSIONADO] LED LIGADO. Timer de 10s iniciado.");
                 } else {
                     esp_timer_restart(led_timer_handle, TIMER_LED_US);
-                    ESP_LOGI(TAG, "[RENOVACÃO] LED já estava aceso. Timer de 10s REINICIADO.");
+                    ESP_LOGI(TAG, "[RENOVACÃO] Timer de 10s REINICIADO.");
                 }
             } 
             else if (evt.level == 0 && is_pressed) {
@@ -81,7 +80,7 @@ static void button_task(void *arg)
                     esp_timer_stop(led_timer_handle);
                     led_state = false;
                     gpio_set_level(LED_PIN, 0);
-                    ESP_LOGW(TAG, "[PRESSIONAMENTO LONGO] Mantido por >=2s! LED desligado e timer cancelado.");
+                    ESP_LOGW(TAG, "[PRESSIONAMENTO LONGO] LED desligado e timer cancelado.");
                 }
             }
         }
@@ -89,17 +88,15 @@ static void button_task(void *arg)
 }
 
 int app_main(void){
-  // Configuração do GPIO do LED
     gpio_reset_pin(LED_PIN);
     gpio_set_direction(LED_PIN, GPIO_MODE_OUTPUT);
     gpio_set_level(LED_PIN, 0);
 
-    // Configuração do GPIO do Botão com Interrupção em ambas as bordas (SUBIDA e DESCIDA)
     gpio_config_t io_conf = {
         .pin_bit_mask = (1ULL << BUTTON_PIN),
         .mode = GPIO_MODE_INPUT,
         .pull_up_en = GPIO_PULLUP_DISABLE,
-        .pull_down_en = GPIO_PULLDOWN_DISABLE, // Usando resistor de 10k externo
+        .pull_down_en = GPIO_PULLDOWN_DISABLE,
         .intr_type = GPIO_INTR_ANYEDGE
     };
     gpio_config(&io_conf);
