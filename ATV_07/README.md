@@ -23,4 +23,4 @@ Refatorar o sistema de iluminação temporizada da atividade anterior substituin
 8. Fica estritamente proibido o uso de vTaskDelay(), rom_delay_us() ou laços de espera dentro da ISR ou do fluxo de temporização.
 
 ## Resolução Desenvolvida
-Disponível em [`main.c`](/main.c) e apresentada ao monitor da disciplina.
+Disponível em [`main.c`](./main.c) e apresentada ao monitor da disciplina.
